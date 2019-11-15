@@ -1,4 +1,4 @@
-{- butrfeld Andrew Butterfield -}
+{- urdaibad David Urdaibay -}
 module Ex03 where
 import Data.List ((\\))
 
@@ -13,6 +13,7 @@ data BT a b
   deriving (Eq, Show)
 
 -- association list
+-- [(a,b)] :: ([(a,b)]) associates values of type 'a' with those of type 'b'
 type Assoc a b = [(a,b)]
 
 -- lookup binary (search) tree
@@ -27,13 +28,16 @@ lkpBST (Branch left k d right) k'
 
 -- insert into binary (search) tree
 insBST :: Ord a => a -> b -> BT a b -> BT a b
-insBST _ _ _  =  error "insBST not yet implmented"
-
+insBST p n Leaf = (Branch Leaf p n Leaf)
+insBST p n (Branch l k d r)
+ | p < k      = (Branch (insBST p n l) k d r)
+ | p > k      = (Branch l k d (insBST p n r))
+ | otherwise  = (Branch l k n r)
 -- Coding Part 2 (6 Marks)
 
 -- convert an association list to a binary search tree
 assoc2bst :: Ord a => Assoc a b -> BT a b
-assoc2bst _ = error "assoc2bst not yet implemented"
+assoc2bst  = 
 
 -- Coding Part 3 (6 Marks)
 
