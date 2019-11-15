@@ -36,8 +36,15 @@ insBST p n (Branch l k d r)
 -- Coding Part 2 (6 Marks)
 
 -- convert an association list to a binary search tree
+-- k & d and keys -> datas
 assoc2bst :: Ord a => Assoc a b -> BT a b
-assoc2bst  = 
+assoc2bst [] = Leaf
+assoc2bst ((k,d):rest) = (insBST k d (assoc2bst rest))
+{- 
+   Actual fluke but lemme explain before I forget what I did (for above): insert the current key
+   and data value (using insBST) that uses assoc2bst function as the BST input
+   because the function has output of BST so in the end the assoc2bst will output the BST 
+-}
 
 -- Coding Part 3 (6 Marks)
 
