@@ -1,3 +1,3 @@
-### A butter field.
+### Functional Programming
 
-Haskell assignments done right.
+Assignments for functional programming module.
