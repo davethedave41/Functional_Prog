@@ -45,7 +45,7 @@ assoc2bst ((k,d):rest) = (insBST k d (assoc2bst rest))
    and data value (using insBST) that uses assoc2bst function as the BST input
    because the function has output of BST so in the end the assoc2bst will output the BST 
 -}
-
+--
 -- Coding Part 3 (6 Marks)
 
 -- convert a binary search tree into an (ordered) association list

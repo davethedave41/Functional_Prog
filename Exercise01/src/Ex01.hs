@@ -11,7 +11,7 @@ if it is lowercase. All other characters are unchanged
 
 -}
 
---raise :: [Char] -> [Char]
+raise :: [Char] -> [Char]
 raise [] = []
 raise (x : xs) = toUpper x : (raise xs)
 
@@ -23,8 +23,8 @@ Write a function 'nth' that returns the nth element of a list
 nth :: Int -> [a] -> a
 nth _ []          = error "empty list"
 nth n xs
-    | n < 0  = error "out of bounds"
-    | n >=0  = (!!) xs (n-1)
+    | n < 0   = error "out of bounds"
+    | n >= 0  = (!!) xs (n-1)
 
 
 {- Part 3
