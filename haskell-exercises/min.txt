@@ -1,0 +1,9 @@
+module Min where
+
+minimumD :: Ord a => [a] -> a
+minimumD l = minimumD2 head l tail l
+
+minimumD2 :: Ord a => [a] -> a
+minimumD2 min [] = min
+minimumD2 min l  = if min > head l 
+                     then minimumD2 head l tail l 
